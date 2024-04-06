@@ -1,0 +1,13 @@
+<nav class="m-2">
+    <ul class="nav mb-5">
+        <li *ngFor="let route of paths" class="nav-item p-2">
+            <div *ngIf="route.path">
+                <a class="nav-link" *ngIf="hasPermission(route.path)" (click)="navigateTo(route.path!)"
+                    routerLinkActive="active">{{
+                    route.path === '/' ?
+                    'Home' : route.path
+                    }}</a>
+            </div>
+        </li>
+    </ul>
+</nav>
